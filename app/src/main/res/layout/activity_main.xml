@@ -6,7 +6,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
     android:clickable="true">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+    <TextView android:text="@string/first_activity_hello" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:layout_marginTop="35dp"
@@ -16,7 +16,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_button_go"
+        android:text="@string/first_activity_go_button"
         android:id="@+id/next"
         android:layout_marginTop="101dp"
         android:layout_below="@+id/textView"
@@ -27,7 +27,7 @@
     <TextClock
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textClock"
+        android:id="@+id/firstActivityTextClock"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 

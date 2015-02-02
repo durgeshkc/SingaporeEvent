@@ -11,7 +11,7 @@ import android.view.View;
 
 public class MainActivity extends Activity {
 
-    public static final String TAG = "firstapp";
+    public static final String TAG = "First";
     public static int REQUEST_CODE = 1000;
 
     @Override
