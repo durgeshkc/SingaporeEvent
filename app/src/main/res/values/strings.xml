@@ -7,5 +7,7 @@
     <string name="text_button_go">Go!</string>
     <string name="title_activity_second">SecondActivity</string>
     <string name="second_activity_title">Our second activity!</string>
+    <string name="second_activity_google_text">Google!</string>
+    <string name="second_activity_call_text">Call!</string>
 
 </resources>

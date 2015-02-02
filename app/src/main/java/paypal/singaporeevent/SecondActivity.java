@@ -1,12 +1,16 @@
 package paypal.singaporeevent;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
-public class SecondActivity extends Activity {
+public class SecondActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +39,22 @@ public class SecondActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Log.i("Second", "Google Button Clicked!");
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("http://google.com"));
+        startActivity(intent);
+    }
+
+    public void onClick2(View view) {
+        Log.i("Second", "Call Button Clicked!");
+
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:555-555-5555"));
+        startActivity(intent);
     }
 }
