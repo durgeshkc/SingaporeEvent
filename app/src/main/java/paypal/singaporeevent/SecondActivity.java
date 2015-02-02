@@ -12,10 +12,17 @@ import android.view.View;
 
 public class SecondActivity extends Activity implements View.OnClickListener {
 
+    public static final String TAG = "Second";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        String one = bundle.getString("one");
+        Log.i(TAG, one);
     }
 
 
@@ -43,7 +50,7 @@ public class SecondActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Log.i("Second", "Google Button Clicked!");
+        Log.i(TAG, "Google Button Clicked!");
 
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("http://google.com"));
@@ -51,7 +58,7 @@ public class SecondActivity extends Activity implements View.OnClickListener {
     }
 
     public void onClick2(View view) {
-        Log.i("Second", "Call Button Clicked!");
+        Log.i(TAG, "Call Button Clicked!");
 
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:555-555-5555"));

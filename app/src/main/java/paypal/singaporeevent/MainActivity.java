@@ -47,6 +47,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Log.i(TAG, "You clicked a button");
 
         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        intent.putExtra("one", "this is data from main activity");
         startActivity(intent);
     }
 }
