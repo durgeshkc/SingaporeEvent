@@ -9,14 +9,24 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends Activity {
 
     public static final String TAG = "firstapp";
+    public static int REQUEST_CODE = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == REQUEST_CODE) {
+            Bundle bundle = intent.getExtras();
+            String two = bundle.getString("two");
+            Log.i(TAG, two);
+        }
     }
 
 
@@ -42,12 +52,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onClick(View v) {
+    public void activityButton(View v) {
         Log.i(TAG, "You clicked a button");
 
         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
         intent.putExtra("one", "this is data from main activity");
-        startActivity(intent);
+        startActivityForResult(intent, REQUEST_CODE);
     }
 }

@@ -21,7 +21,7 @@
         android:layout_marginTop="101dp"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:onClick="onClick"
+        android:onClick="activityButton"
         />
 
     <TextClock

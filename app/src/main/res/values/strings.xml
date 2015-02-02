@@ -9,5 +9,6 @@
     <string name="second_activity_title">Our second activity!</string>
     <string name="second_activity_google_text">Google!</string>
     <string name="second_activity_call_text">Call!</string>
+    <string name="second_activity_go_back">Go back</string>
 
 </resources>

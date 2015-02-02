@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class SecondActivity extends Activity implements View.OnClickListener {
+public class SecondActivity extends Activity {
 
     public static final String TAG = "Second";
 
@@ -48,8 +48,7 @@ public class SecondActivity extends Activity implements View.OnClickListener {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onClick(View v) {
+    public void googleButton(View v) {
         Log.i(TAG, "Google Button Clicked!");
 
         Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -57,11 +56,19 @@ public class SecondActivity extends Activity implements View.OnClickListener {
         startActivity(intent);
     }
 
-    public void onClick2(View view) {
+    public void callButton(View view) {
         Log.i(TAG, "Call Button Clicked!");
 
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:555-555-5555"));
         startActivity(intent);
+    }
+
+    public void doneButton(View view) {
+        Log.i(TAG, "Done Button Clicked!");
+        Intent intent = new Intent();
+        intent.putExtra("two", "This data is from second activity");
+        setResult(RESULT_OK, intent);
+        finish();
     }
 }
