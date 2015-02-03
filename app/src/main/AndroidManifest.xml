@@ -21,6 +21,13 @@
             android:name=".SecondActivity"
             android:label="@string/title_activity_second" >
         </activity>
+        <!--<receiver android:name="paypal.singaporeevent.SMSReceiver"-->
+            <!-->-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.provider.Telephony.SMS_RECEIVED" />-->
+                <!--<action android:name="android.provider.Telephony.SMS_SENT" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
     </application>
 
 </manifest>
