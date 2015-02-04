@@ -39,7 +39,20 @@ public class GetPhoneNumber extends Activity{
 				//Send it to Rest service on postexecute show next scree
 			}
 		});
-		
+
+        Button newListButton = (Button)findViewById(R.id.newListButton);
+        newListButton.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                EditText et = (EditText)findViewById(R.id.num);
+                phonum = et.getText().toString();
+                Intent intent = new Intent(GetPhoneNumber.this, NewListActivity.class);
+                intent.putExtra("num", phonum);
+                startActivity(intent);
+                //Send it to Rest service on postexecute show next scree
+            }
+        });
 	}
 	
 

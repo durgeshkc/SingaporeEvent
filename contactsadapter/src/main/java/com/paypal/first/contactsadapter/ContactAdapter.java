@@ -14,7 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-public class ContanctAdapter extends ArrayAdapter<ContactBean> {
+public class ContactAdapter extends ArrayAdapter<ContactBean> {
 
 	private Activity activity;
 	private List<ContactBean> items;
@@ -26,7 +26,7 @@ public class ContanctAdapter extends ArrayAdapter<ContactBean> {
 
 	 
 
-	public ContanctAdapter(Activity act, int row, List<ContactBean> items) {
+	public ContactAdapter(Activity act, int row, List<ContactBean> items) {
 		super(act, row, items);
 
 		this.activity = act;

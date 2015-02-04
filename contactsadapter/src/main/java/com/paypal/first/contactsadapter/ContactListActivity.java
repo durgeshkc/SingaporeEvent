@@ -1,23 +1,15 @@
 package com.paypal.first.contactsadapter;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.util.Log;
@@ -107,7 +99,7 @@ public class ContactListActivity extends Activity implements
 		}
 		phones.close();
 
-		ContanctAdapter objAdapter = new ContanctAdapter(
+		ContactAdapter objAdapter = new ContactAdapter(
 				ContactListActivity.this, R.layout.alluser_row, list);
 		listView.setAdapter(objAdapter);
 		// SparseBooleanArray mChecked = new SparseBooleanArray();

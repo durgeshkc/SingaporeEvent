@@ -35,4 +35,14 @@
         android:layout_marginTop="47dp"
         android:text="Select Contacts" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New List Adapter"
+        android:id="@+id/newListButton"
+        android:layout_below="@+id/grpbut"
+        android:layout_alignLeft="@+id/grpbut"
+        android:layout_alignStart="@+id/grpbut"
+        android:layout_marginTop="37dp" />
+
 </RelativeLayout>
