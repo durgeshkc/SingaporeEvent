@@ -1,6 +1,5 @@
 package paypal.completeapp;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +13,6 @@ import java.util.List;
  * Created by thanhtnguyen on 4/2/15.
  */
 public class EventAdapter extends ArrayAdapter<Event> {
-    static final String TAG = "EVENT_ADAPTER";
     private Context context;
     private int row;
     private List<Event> events;

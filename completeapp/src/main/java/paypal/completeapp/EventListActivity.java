@@ -1,13 +1,15 @@
 package paypal.completeapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
-import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -47,6 +49,16 @@ public class EventListActivity extends Activity {
                 }
             }
         }, 2000, 3000);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.i(TAG, "Clicked on " + position);
+                Intent intent = new Intent(EventListActivity.this, MapsActivity.class);
+                intent.putExtra("event_id", position);
+                startActivity(intent);
+            }
+        });
     }
 
 

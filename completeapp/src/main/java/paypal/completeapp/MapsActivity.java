@@ -1,7 +1,9 @@
 package paypal.completeapp;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -11,12 +13,18 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
+    static final String TAG = "MAPS_ACTIVITY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        int itemId = bundle.getInt("event_id");
+        Log.i(TAG, "item: " + itemId + " " + Storage.events.get(itemId).getLocation());
     }
 
     @Override
