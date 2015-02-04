@@ -1,1 +1,1 @@
-include ':app', ':resolveaddress', ':contactsadapter', ':firstmap'
+include ':app', ':resolveaddress', ':contactsadapter', ':firstmap', ':completeapp'
