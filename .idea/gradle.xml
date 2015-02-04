@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/completeapp" />
             <option value="$PROJECT_DIR$/contactsadapter" />
+            <option value="$PROJECT_DIR$/filesystem" />
             <option value="$PROJECT_DIR$/firstmap" />
             <option value="$PROJECT_DIR$/resolveaddress" />
           </set>
