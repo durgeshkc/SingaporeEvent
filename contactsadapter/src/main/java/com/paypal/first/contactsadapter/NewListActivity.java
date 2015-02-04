@@ -52,6 +52,13 @@ public class NewListActivity extends Activity {
                 if (counter == 20) {
                     cancel();
                 }
+
+                NewListActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        adapter.notifyDataSetChanged();
+                    }
+                });
             }
         }, 100, 1000);
 
