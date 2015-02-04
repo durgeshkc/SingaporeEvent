@@ -38,7 +38,6 @@ public class NewListActivity extends Activity {
 
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
-            private volatile ScheduledFuture<?> self;
             int counter = 0;
 
             @Override
