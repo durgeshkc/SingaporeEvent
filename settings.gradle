@@ -1,1 +1,1 @@
-include ':app', ':resolveaddress'
+include ':app', ':resolveaddress', ':contactsadapter'

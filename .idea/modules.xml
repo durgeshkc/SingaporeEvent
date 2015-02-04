@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SingaporeEvent.iml" filepath="$PROJECT_DIR$/SingaporeEvent.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/contactsadapter/contactsadapter.iml" filepath="$PROJECT_DIR$/contactsadapter/contactsadapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/resolveaddress/resolveaddress.iml" filepath="$PROJECT_DIR$/resolveaddress/resolveaddress.iml" />
     </modules>
   </component>
