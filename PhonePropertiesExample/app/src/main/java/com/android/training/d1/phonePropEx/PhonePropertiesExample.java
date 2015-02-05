@@ -77,10 +77,10 @@ public class PhonePropertiesExample extends Activity {
 				.getCellLocation();
 
 		// GSM location area code
-		//String cellLocAreaCode = "" + cellLocation.getLac();
+		String cellLocAreaCode = "" + cellLocation.getLac();
 
 		// GSM cell id
-		//String cellLocId = "" + cellLocation.getCid();
+		String cellLocId = "" + cellLocation.getCid();
 
 		// Returns the unique device ID, for example, the IMEI for GSM and the
 		// MEID for CDMA phones.
@@ -92,17 +92,17 @@ public class PhonePropertiesExample extends Activity {
 
 		// Returns the phone number string for line 1, for example, the MSISDN
 		// for a GSM phone.
-		//String line1Number = telMgr.getLine1Number();
+		String line1Number = telMgr.getLine1Number();
 
 		// Returns the ISO country code equivalent of the current registered
 		// operator's MCC (Mobile Country Code).
-		//String networkCountryIso = telMgr.getNetworkCountryIso();
+		String networkCountryIso = telMgr.getNetworkCountryIso();
 
 		// Returns the numeric name (MCC+MNC) of current registered operator.
-		//String networkOperator = telMgr.getNetworkOperator();
+		String networkOperator = telMgr.getNetworkOperator();
 
 		// Returns the alphabetic name of current registered operator.
-		//String networkOperatorName = telMgr.getNetworkOperatorName();
+		String networkOperatorName = telMgr.getNetworkOperatorName();
 
 		// Returns a constant indicating the device phone type.
 		int phoneType = telMgr.getPhoneType();
@@ -121,21 +121,21 @@ public class PhonePropertiesExample extends Activity {
 
 		// Returns the ISO country code equivalent for the SIM provider's
 		// country code.
-	//	String simCountryIso = telMgr.getSimCountryIso();
+		String simCountryIso = telMgr.getSimCountryIso();
 
 		// Returns the MCC+MNC (mobile country code + mobile network code) of
 		// the provider of the SIM. 5 or 6 decimal digits.
-		//String simOperator = telMgr.getSimOperator();
+		String simOperator = telMgr.getSimOperator();
 
 		// Returns the Service Provider Name (SPN).
-		//String simOperatorName = telMgr.getSimOperatorName();
+		String simOperatorName = telMgr.getSimOperatorName();
 
 		// Returns the serial number of the SIM, if applicable.
-		//String simSerialNumber = telMgr.getSimSerialNumber();
+		String simSerialNumber = telMgr.getSimSerialNumber();
 
 		// Returns the unique subscriber ID, for example, the IMSI for a GSM
 		// phone.
-		//String simSubscriberId = telMgr.getSubscriberId();
+		String simSubscriberId = telMgr.getSubscriberId();
 
 		// Returns a constant indicating the state of the device SIM card.
 		int simState = telMgr.getSimState();
@@ -163,20 +163,20 @@ public class PhonePropertiesExample extends Activity {
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("  \n\ncallState = " + callStateString);
-		//sb.append("  \n\ncellLocationAreaCode = " + cellLocAreaCode);
-		//sb.append("  \n\ncellLocationId = " + cellLocId);
+		sb.append("  \n\ncellLocationAreaCode = " + cellLocAreaCode);
+		sb.append("  \n\ncellLocationId = " + cellLocId);
 		sb.append("  \n\ndeviceId = " + deviceId);
 		sb.append("  \n\ndeviceSoftwareVersion = " + deviceSoftwareVersion);
-		//sb.append("  \n\nline1Number = " + line1Number);
-		//sb.append("  \n\nnetworkCountryIso = " + networkCountryIso);
-		//sb.append("  \n\nnetworkOperator = " + networkOperator);
-		//sb.append("  \n\nnetworkOperatorName = " + networkOperatorName);
+		sb.append("  \n\nline1Number = " + line1Number);
+		sb.append("  \n\nnetworkCountryIso = " + networkCountryIso);
+		sb.append("  \n\nnetworkOperator = " + networkOperator);
+		sb.append("  \n\nnetworkOperatorName = " + networkOperatorName);
 		sb.append("  \n\nphoneTypeString = " + phoneTypeString);
-		//sb.append("  \n\nsimCountryIso = " + simCountryIso);
-		//sb.append("  \n\nsimOperator = " + simOperator);
-		//sb.append("  \n\nsimOperatorName = " + simOperatorName);
-		//sb.append("  \n\nsimSerialNumber = " + simSerialNumber);
-		//sb.append("  \n\nsimSubscriberId = " + simSubscriberId);
+		sb.append("  \n\nsimCountryIso = " + simCountryIso);
+		sb.append("  \n\nsimOperator = " + simOperator);
+		sb.append("  \n\nsimOperatorName = " + simOperatorName);
+		sb.append("  \n\nsimSerialNumber = " + simSerialNumber);
+		sb.append("  \n\nsimSubscriberId = " + simSubscriberId);
 		sb.append("  \n\nsimStateString = " + simStateString);
 
 		return sb.toString();
