@@ -1,1 +1,2 @@
 include ':app', ':resolveaddress', ':contactsadapter', ':firstmap', ':completeapp', ':filesystem'
+include ':batteryStatus'

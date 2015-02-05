@@ -1,30 +1,33 @@
 package paypal.completeapp;
 
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.IOException;
+import java.util.List;
 
 public class MapsActivity extends FragmentActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     static final String TAG = "MAPS_ACTIVITY";
 
+    private double lat, lon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
-
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        int itemId = bundle.getInt("event_id");
-        Log.i(TAG, "item: " + itemId + " " + Storage.events.get(itemId).getLocation());
     }
 
     @Override
@@ -68,6 +71,29 @@ public class MapsActivity extends FragmentActivity {
      * This should only be called once and when we are sure that {@link #mMap} is not null.
      */
     private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        int itemId = bundle.getInt("event_id");
+        Log.i(TAG, "item: " + itemId);
+
+        Geocoder geocoder = new Geocoder(this);
+        String location = Storage.events.get(itemId).getLocation();
+        Log.i(TAG, "location: " + location);
+
+        try {
+            List<Address> addressList = geocoder.getFromLocationName(location, 1);
+            Address address = addressList.get(0);
+            this.lat = address.getLatitude();
+            this.lon = address.getLongitude();
+
+            Log.i(TAG, "(" + this.lat + "," + this.lon + ")");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        LatLng marker_pos = new LatLng(this.lat, this.lon);
+        MarkerOptions marker = new MarkerOptions().position(marker_pos).title(location);
+        mMap.addMarker(marker);
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(marker_pos, 12));
     }
 }
